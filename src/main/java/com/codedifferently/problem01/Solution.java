@@ -1,5 +1,7 @@
 package com.codedifferently.problem01;
 
+
+
 public class Solution {
     /**
      * You will be given an array of numbers, search the array and return the longest
@@ -10,7 +12,21 @@ public class Solution {
      * @param allNumbers
      * @return
      */
-    public String findLongestConsecutiveSet(Integer[] allNumbers){
-        return null;
+    public int findLongestConsecutiveSet(Integer[] allNumbers){
+        int longestStreak= 0;
+        for(Integer num : allNumbers){
+            Integer currentNum = num;
+            int currentStreak = 1;
+            while (arrayContains(allNumbers, currentNum + 1)) {
+                currentNum += 1;
+                currentStreak += 1;
+            }
+
+            longestStreak = Math.max(longestStreak, currentStreak);
+        }
+
+        return longestStreak;
     }
-}
+        }
+    }
+
